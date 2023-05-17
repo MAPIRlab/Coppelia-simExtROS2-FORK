@@ -61,6 +61,7 @@ list(APPEND CMAKE_MODULE_PATH
 find_package(CoppeliaSim 4.1.0.0 REQUIRED)
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 find_package(Boost REQUIRED)
+find_package(coppelia_ros2_pkg REQUIRED)
 
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/generated)
 file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/doc)
@@ -91,6 +92,7 @@ set(SOURCES
 coppeliasim_add_plugin(simExtROS2 SOURCES ${SOURCES})
 add_dependencies(simExtROS2 generate_ros_code)
 target_include_directories(simExtROS2 PUBLIC
+    ${COPPELIASIM_INCLUDE_DIR}
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>)
 target_link_libraries(simExtROS2 Boost::boost)
@@ -115,6 +117,7 @@ ament_target_dependencies(
     "visualization_msgs"
     "std_srvs"
     "example_interfaces"
+    "coppelia_ros2_pkg"
 )
 if(image_transport_FOUND)
     ament_target_dependencies(

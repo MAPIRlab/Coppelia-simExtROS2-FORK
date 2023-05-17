@@ -41,3 +41,4 @@ widgets.html
 
 # clion project files 
 .idea/
+COLCON_IGNORE

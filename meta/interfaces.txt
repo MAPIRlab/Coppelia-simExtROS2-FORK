@@ -1,9 +1,15 @@
 builtin_interfaces/msg/Duration
 builtin_interfaces/msg/Time
+rosgraph_msgs/msg/Clock
 geometry_msgs/msg/Quaternion
+geometry_msgs/msg/Point
 geometry_msgs/msg/Transform
 geometry_msgs/msg/TransformStamped
 geometry_msgs/msg/Vector3
+geometry_msgs/msg/Pose
+geometry_msgs/msg/Twist
+geometry_msgs/msg/PoseWithCovariance
+geometry_msgs/msg/TwistWithCovariance
 sensor_msgs/msg/Image
 sensor_msgs/msg/PointCloud2
 sensor_msgs/msg/PointField
@@ -28,3 +34,7 @@ std_srvs/srv/SetBool
 std_srvs/srv/Trigger
 example_interfaces/srv/AddTwoInts
 example_interfaces/action/Fibonacci
+sensor_msgs/msg/LaserScan
+coppelia_ros2_pkg/msg/RangeBearing
+coppelia_ros2_pkg/msg/Ultrasonic
+nav_msgs/msg/Odometry
